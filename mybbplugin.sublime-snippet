@@ -2,7 +2,6 @@
     <content>
         <![CDATA[
 <?php
-
 /**
  * ${1:Sample Plugin}
  *
@@ -21,15 +20,40 @@ if (!defined('IN_MYBB')) {
 function ${8:myplugin}_info()
 {
     return array(
-        'name'          =>  '${1:Sample Plugin}',
-        'description'   =>  '${2:Plugin Description}',
+        'name'          =>  '$1',
+        'description'   =>  '$2',
         'website'       =>  '{$9:http://yoursite.com}',
-        'author'        =>  '{$4:AuthorName}',
+        'author'        =>  '$4',
         'authorsite'    =>  '${10:http://yoursite.com}',
-        'version'       =>  '${7:1.0.0}',
+        'version'       =>  '$7',
         'guid'          =>  '$11',
         'compatibility' =>  '${12:16*}',
     );
+}
+
+function $8_install()
+{
+    global $db;
+}
+
+function $8_is_installed()
+{
+    global $db;
+}
+
+function $8_uninstall()
+{
+    global $db;
+}
+
+function $8_activate()
+{
+    global $db;
+}
+
+function $8_deactivate()
+{
+    global $db;
 }
 
 ]]></content>
