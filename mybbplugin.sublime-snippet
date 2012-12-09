@@ -34,5 +34,6 @@ function ${8:myplugin}_info()
 
 ]]></content>
     <tabTrigger>mybbplugin</tabTrigger>
+    <scope>source.php, text.html.basic, text.plain</scope>
     <description>MyBB: Plugin Template</description>
 </snippet>
