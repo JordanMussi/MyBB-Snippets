@@ -1,0 +1,39 @@
+<snippet>
+    <content>
+        <![CDATA[
+<?php
+
+/**
+ * ${1:Sample Plugin}
+ *
+ * ${2:Plugin Description}
+ *
+ * @package ${3:Package Name}
+ * @author  ${4:Author Name} <${5:email@domain.com}>
+ * @license ${6:http://opensource.org/licenses/mit-license.php MIT License}
+ * @version ${7:1.0.0}
+ */
+
+if (!defined('IN_MYBB')) {
+    die('Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.');
+}
+
+function ${8:myplugin}_info()
+{
+    return array(
+        'name'          =>  '${1:Sample Plugin}',
+        'description'   =>  '${2:Plugin Description}',
+        'website'       =>  '{$9:http://yoursite.com}',
+        'author'        =>  '{$4:AuthorName}',
+        'authorsite'    =>  '${10:http://yoursite.com}',
+        'version'       =>  '${7:1.0.0}',
+        'guid'          =>  '${11:}',
+        'compatibility' =>  '${12:16*}',
+    );
+}
+
+]]></content>
+    <tabTrigger>mybbplugin</tabTrigger>
+    <scope>source.php</scope>
+    <description>MyBB: Plugin Template</description>
+</snippet>
