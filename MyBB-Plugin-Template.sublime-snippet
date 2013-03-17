@@ -1,0 +1,96 @@
+<snippet>
+	<content><![CDATA[
+<?php
+/**
+ * Sample Plugin
+ *
+ * Plugin Description
+ *
+ * @package Package Name
+ * @author  Author Name <email@domain.com>
+ * @license http://opensource.org/licenses/mit-license.php MIT License
+ * @version 1.0.0
+ */
+
+if (!defined('IN_MYBB'))
+{
+	die('Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.');
+}
+
+\$plugins->add_hook("global_start","myplugin_run")
+
+function myplugin_info()
+{
+	return array(
+		'name'          =>  'Sample Plugin',
+		'description'   =>  'Plugin Description',
+		'website'       =>  'http://yoursite.com',
+		'author'        =>  'Author Name',
+		'authorsite'    =>  'http://yoursite.com',
+		'version'       =>  '1.0.0',
+		'guid'          =>  '',
+		'compatibility' =>  '16*',
+	);
+}
+
+function myplugin_install()
+{
+	global \$db;
+
+	\$insert_array = array(
+		'gid'    => 'NULL',
+		'name'  => 'myfirstplugin',
+		'title'      => 'My Plugin',
+		'description'    => 'Settings For My Plugin',
+		'disporder'    => "1",
+		'isdefault'  => "0",
+	);
+
+	\$db->insert_query('settinggroups', \$myfirstplugin_group);
+	\$gid = \$db->insert_id();
+
+	\$insert_array = array(
+		'sid'            => 'NULL',
+		'name'        => 'myplugin_enable',
+		'title'            => 'Do you want to enable My Plugin?',
+		'description'    => 'If you set this option to yes, this plugin will be active on your board.',
+		'optionscode'    => 'yesno',
+		'value'        => '1',
+		'disporder'        => 1,
+		'gid'            => intval(\$gid),
+	);
+
+	\$db->insert_query('settings', \$myfirstplugin_setting);
+	rebuild_settings();
+}
+
+function myplugin_is_installed()
+{
+	global ;
+}
+
+function myplugin_uninstall()
+{
+	global ;
+}
+
+function myplugin_activate()
+{
+	global ;
+}
+
+function myplugin_deactivate()
+{
+	global ;
+}
+
+function myplugin_run()
+{
+	global ;
+}
+?>
+]]></content>
+	<tabTrigger>mybbplugin</tabTrigger>
+	<scope>source.php, text.html.basic, text.plain</scope>
+	<description>Full MyBB Plugin Template</description>
+</snippet>
