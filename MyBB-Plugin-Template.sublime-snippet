@@ -46,7 +46,7 @@ function myplugin_install()
 		'isdefault'  => "0",
 	);
 
-	\$db->insert_query('settinggroups', \$myfirstplugin_group);
+	\$db->insert_query('settinggroups', \$insert_array);
 	\$gid = \$db->insert_id();
 
 	\$insert_array = array(
@@ -60,7 +60,7 @@ function myplugin_install()
 		'gid'            => intval(\$gid),
 	);
 
-	\$db->insert_query('settings', \$myfirstplugin_setting);
+	\$db->insert_query('settings', \$insert_array);
 	rebuild_settings();
 }
 
