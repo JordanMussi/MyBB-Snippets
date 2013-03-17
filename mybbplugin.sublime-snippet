@@ -22,7 +22,7 @@ function ${8:myplugin}_info()
     return array(
         'name'          =>  '$1',
         'description'   =>  '$2',
-        'website'       =>  '{$9:http://yoursite.com}',
+        'website'       =>  '${9:http://yoursite.com}',
         'author'        =>  '$4',
         'authorsite'    =>  '${10:http://yoursite.com}',
         'version'       =>  '$7',
